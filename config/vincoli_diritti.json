@@ -1,0 +1,25 @@
+{
+  "nota": "I vincoli escludono politiche PRIMA di ogni calcolo: nessun peso li può compensare. 'diritto' = fondato su una norma (interpretazione da validare con un giurista); 'scelta_normativa' = scelta degli autori, rivedibile.",
+  "vincoli": [
+    {
+      "id": "R1",
+      "tipo": "diritto",
+      "descrizione": "Almeno metà dei posti al gruppo svantaggiato",
+      "attributo": "svantaggiati",
+      "operatore": ">=",
+      "valore": 30,
+      "fondamento": "Costituzione art. 3, comma 2 (rimuovere gli ostacoli) e art. 34 (diritto allo studio dei capaci e meritevoli privi di mezzi)",
+      "stato_validazione": "interpretazione degli autori: la soglia del 50% non è prescritta dalla norma"
+    },
+    {
+      "id": "R2",
+      "tipo": "scelta_normativa",
+      "descrizione": "Almeno 15 posti agli altri studenti",
+      "attributo": "altri",
+      "operatore": ">=",
+      "valore": 15,
+      "fondamento": "Vincolo artificiale ereditato dalla 0.7 per confrontabilità",
+      "stato_validazione": "non è una norma etica universale"
+    }
+  ]
+}

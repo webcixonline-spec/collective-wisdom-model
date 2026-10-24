@@ -1,0 +1,17 @@
+# Registro di audit e chiave HMAC: locali, mai nel repository
+registro_audit/
+# Esiti generati dalle analisi
+esiti/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+
+# Sistema e strumenti locali
+.DS_Store
+.claude/

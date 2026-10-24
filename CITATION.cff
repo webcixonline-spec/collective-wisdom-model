@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "Se usi questo software, citalo così."
+title: "Collective Wisdom Model (CWM)"
+version: 1.2.1
+date-released: 2026-10-24
+license: EUPL-1.2
+type: software
+authors:
+  - family-names: Magrini
+    given-names: Cristian
+abstract: >-
+  Livello decisionale e di governance per decisioni pubbliche in incertezza:
+  cancello sulle prove in stile GRADE, valore dell'informazione (EVPI, EVPPI, EVSI, VOI-R),
+  pesi da confronti a coppie con controllo di coerenza, vincoli sui diritti non compensabili,
+  astensione esplicita e registro di audit verificabile. Usa EMA Workbench come motore di esplorazione.
+keywords:
+  - decision making under deep uncertainty
+  - robust decision making
+  - value of information
+  - analytic hierarchy process
+  - audit

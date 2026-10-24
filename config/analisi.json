@@ -1,0 +1,25 @@
+{
+  "nota": "Piano di analisi. Congelarlo con 'python -m cwm preregistra' PRIMA di guardare i risultati: ogni modifica successiva viene segnalata come deviazione.",
+  "semi": {"train": 2026, "estrapolazione": 4051, "strutturale": 8087, "voi": 17, "stabilita": 29},
+  "scenari": {"train": 240, "estrapolazione": 120, "strutturale": 120, "voi": 2000},
+  "passo_politiche": 5,
+  "intervalli": {"fonte": "registro", "nota": "registro: intervalli ricavati dalle stime delle fonti (evidence.intervalli_da_registro); i parametri senza stime restano sugli intervalli ipotetici, dichiarati come tali. ipotesi: solo intervalli ipotetici (comportamento fino alla 1.2.0)."},
+  "obiettivo": "pilota_valutato",
+  "regola_di_scelta": "minimax_regret",
+  "validazione": {
+    "tolleranza_trasferimento": 0.02,
+    "descrizione": "La scelta fatta sul train supera un holdout se il suo rimpianto massimo sull'holdout supera quello della scelta ottimale per l'holdout di al massimo la tolleranza."
+  },
+  "pesi": {"fonte": "elicitazione", "file": "partecipanti_esempio.json", "soglia_coerenza": 0.10},
+  "valore_informazione": {
+    "decisioni_interessate": 500,
+    "euro_per_unita_utilita": null,
+    "nota_lambda": "Il valore in euro di un'unità di utilità è una scelta del decisore: senza di essa il CWM riporta solo la soglia lambda oltre la quale lo studio conviene.",
+    "studi": [
+      {"nome": "RCT sull'efficacia del tutoraggio", "parametro": "effetto", "unita": "studenti", "errore_standard_unitario": 2.0, "dimensioni": [100, 200, 400, 800, 1600], "costo_fisso_eur": 40000, "costo_per_unita_eur": 150},
+      {"nome": "RCT stratificato per gruppo (efficacia relativa)", "parametro": "moltiplicatore", "unita": "studenti", "errore_standard_unitario": 20.0, "dimensioni": [200, 400, 800, 1600, 3200], "costo_fisso_eur": 50000, "costo_per_unita_eur": 150},
+      {"nome": "Rilevazione dei costi negli istituti", "parametro": "costo_svantaggiati", "unita": "istituti", "errore_standard_unitario": 250.0, "dimensioni": [5, 10, 20, 40, 80], "costo_fisso_eur": 8000, "costo_per_unita_eur": 600}
+    ]
+  },
+  "stabilita": {"campioni_smaa": 400, "concentrazione": 20.0, "direzioni_raggio": 40}
+}

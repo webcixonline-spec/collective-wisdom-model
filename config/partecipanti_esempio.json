@@ -1,0 +1,293 @@
+{
+ "nota": "ESEMPIO SINTETICO: partecipanti e giudizi inventati per dimostrare il metodo. Non rappresentano preferenze reali.",
+ "natura": "sintetica",
+ "criteri": [
+  "apprendimento",
+  "equita",
+  "accesso",
+  "lungo_periodo",
+  "sostenibilita"
+ ],
+ "partecipanti": [
+  {
+   "id": "docente_A",
+   "ruolo": "docente",
+   "giudizi": [
+    {
+     "a": "apprendimento",
+     "b": "equita",
+     "valore": 1
+    },
+    {
+     "a": "apprendimento",
+     "b": "accesso",
+     "valore": 3
+    },
+    {
+     "a": "apprendimento",
+     "b": "lungo_periodo",
+     "valore": 2
+    },
+    {
+     "a": "apprendimento",
+     "b": "sostenibilita",
+     "valore": 3
+    },
+    {
+     "a": "equita",
+     "b": "accesso",
+     "valore": 3
+    },
+    {
+     "a": "equita",
+     "b": "lungo_periodo",
+     "valore": 2
+    },
+    {
+     "a": "equita",
+     "b": "sostenibilita",
+     "valore": 3
+    },
+    {
+     "a": "accesso",
+     "b": "lungo_periodo",
+     "valore": 0.5
+    },
+    {
+     "a": "accesso",
+     "b": "sostenibilita",
+     "valore": 1
+    },
+    {
+     "a": "lungo_periodo",
+     "b": "sostenibilita",
+     "valore": 2
+    }
+   ]
+  },
+  {
+   "id": "famiglie_B",
+   "ruolo": "famiglie",
+   "giudizi": [
+    {
+     "a": "apprendimento",
+     "b": "equita",
+     "valore": 1
+    },
+    {
+     "a": "apprendimento",
+     "b": "accesso",
+     "valore": 1
+    },
+    {
+     "a": "apprendimento",
+     "b": "lungo_periodo",
+     "valore": 2
+    },
+    {
+     "a": "apprendimento",
+     "b": "sostenibilita",
+     "valore": 2
+    },
+    {
+     "a": "equita",
+     "b": "accesso",
+     "valore": 1
+    },
+    {
+     "a": "equita",
+     "b": "lungo_periodo",
+     "valore": 2
+    },
+    {
+     "a": "equita",
+     "b": "sostenibilita",
+     "valore": 2
+    },
+    {
+     "a": "accesso",
+     "b": "lungo_periodo",
+     "valore": 1
+    },
+    {
+     "a": "accesso",
+     "b": "sostenibilita",
+     "valore": 1
+    },
+    {
+     "a": "lungo_periodo",
+     "b": "sostenibilita",
+     "valore": 1
+    }
+   ]
+  },
+  {
+   "id": "ente_locale_C",
+   "ruolo": "ente",
+   "giudizi": [
+    {
+     "a": "apprendimento",
+     "b": "equita",
+     "valore": 1
+    },
+    {
+     "a": "apprendimento",
+     "b": "accesso",
+     "valore": 2
+    },
+    {
+     "a": "apprendimento",
+     "b": "lungo_periodo",
+     "valore": 1
+    },
+    {
+     "a": "apprendimento",
+     "b": "sostenibilita",
+     "valore": 0.5
+    },
+    {
+     "a": "equita",
+     "b": "accesso",
+     "valore": 2
+    },
+    {
+     "a": "equita",
+     "b": "lungo_periodo",
+     "valore": 1
+    },
+    {
+     "a": "equita",
+     "b": "sostenibilita",
+     "valore": 0.5
+    },
+    {
+     "a": "accesso",
+     "b": "lungo_periodo",
+     "valore": 0.5
+    },
+    {
+     "a": "accesso",
+     "b": "sostenibilita",
+     "valore": 0.25
+    },
+    {
+     "a": "lungo_periodo",
+     "b": "sostenibilita",
+     "valore": 0.5
+    }
+   ]
+  },
+  {
+   "id": "ricercatore_D",
+   "ruolo": "ricercatore",
+   "giudizi": [
+    {
+     "a": "apprendimento",
+     "b": "equita",
+     "valore": 2
+    },
+    {
+     "a": "apprendimento",
+     "b": "accesso",
+     "valore": 4
+    },
+    {
+     "a": "apprendimento",
+     "b": "lungo_periodo",
+     "valore": 1
+    },
+    {
+     "a": "apprendimento",
+     "b": "sostenibilita",
+     "valore": 7
+    },
+    {
+     "a": "equita",
+     "b": "accesso",
+     "valore": 2
+    },
+    {
+     "a": "equita",
+     "b": "lungo_periodo",
+     "valore": 0.5
+    },
+    {
+     "a": "equita",
+     "b": "sostenibilita",
+     "valore": 4
+    },
+    {
+     "a": "accesso",
+     "b": "lungo_periodo",
+     "valore": 0.333333
+    },
+    {
+     "a": "accesso",
+     "b": "sostenibilita",
+     "valore": 2
+    },
+    {
+     "a": "lungo_periodo",
+     "b": "sostenibilita",
+     "valore": 6
+    }
+   ]
+  },
+  {
+   "id": "incoerente_E",
+   "ruolo": "esempio",
+   "giudizi": [
+    {
+     "a": "apprendimento",
+     "b": "equita",
+     "valore": 0.2
+    },
+    {
+     "a": "apprendimento",
+     "b": "accesso",
+     "valore": 9
+    },
+    {
+     "a": "apprendimento",
+     "b": "lungo_periodo",
+     "valore": 9
+    },
+    {
+     "a": "apprendimento",
+     "b": "sostenibilita",
+     "valore": 0.2
+    },
+    {
+     "a": "equita",
+     "b": "accesso",
+     "valore": 5
+    },
+    {
+     "a": "equita",
+     "b": "lungo_periodo",
+     "valore": 9
+    },
+    {
+     "a": "equita",
+     "b": "sostenibilita",
+     "valore": 7
+    },
+    {
+     "a": "accesso",
+     "b": "lungo_periodo",
+     "valore": 0.1111111111111111
+    },
+    {
+     "a": "accesso",
+     "b": "sostenibilita",
+     "valore": 9
+    },
+    {
+     "a": "lungo_periodo",
+     "b": "sostenibilita",
+     "valore": 0.14285714285714285
+    }
+   ]
+  }
+ ]
+}

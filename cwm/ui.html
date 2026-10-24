@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:,">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CWM 1.2</title>
+<style>
+:root{
+  --bg:#f6f5f1;--panel:#ffffff;--ink:#1d1d1b;--muted:#6b6a64;--line:#e3e1da;
+  --accent:#2f5d8a;--accent-soft:#e3ecf5;--ok:#2e7d4f;--ok-soft:#e1f2e8;--warn:#a5650a;--warn-soft:#fbefd9;
+  --bad:#b23a2e;--bad-soft:#f8e3e0;--bar2:#9a6fb0;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141413;--panel:#1d1d1b;--ink:#ecebe6;--muted:#a3a29b;--line:#34332f;
+  --accent:#7fb0e0;--accent-soft:#1f2e3d;--ok:#6cc292;--ok-soft:#1b3326;--warn:#e3a94a;--warn-soft:#3a2c14;
+  --bad:#ec7f72;--bad-soft:#3c1f1b;--bar2:#c39ad6;}}
+:root[data-theme="dark"]{
+  --bg:#141413;--panel:#1d1d1b;--ink:#ecebe6;--muted:#a3a29b;--line:#34332f;
+  --accent:#7fb0e0;--accent-soft:#1f2e3d;--ok:#6cc292;--ok-soft:#1b3326;--warn:#e3a94a;--warn-soft:#3a2c14;
+  --bad:#ec7f72;--bad-soft:#3c1f1b;--bar2:#c39ad6;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{padding:20px 24px 8px;max-width:1240px;margin:0 auto}
+h1{font-size:22px;margin:0;letter-spacing:-.01em}
+h1 span{color:var(--muted);font-weight:400}
+.sub{color:var(--muted);font-size:13px;margin-top:2px}
+main{max-width:1240px;margin:0 auto;padding:8px 24px 40px;display:grid;grid-template-columns:300px 1fr;gap:20px}
+@media (max-width:860px){main{grid-template-columns:1fr;padding:8px 16px 32px}header{padding:16px 16px 4px}}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px;min-width:0}
+.panel h2{font-size:14px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 12px;font-weight:600}
+aside .panel{position:sticky;top:12px}
+.col{display:flex;flex-direction:column;gap:20px;min-width:0}
+.banner{grid-column:1/-1;display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap}
+.badge{display:inline-block;padding:3px 10px;border-radius:999px;font-weight:600;font-size:12px;letter-spacing:.03em;white-space:nowrap}
+.b-ok{background:var(--ok-soft);color:var(--ok)}.b-warn{background:var(--warn-soft);color:var(--warn)}.b-bad{background:var(--bad-soft);color:var(--bad)}
+.b-info{background:var(--accent-soft);color:var(--accent)}
+.sintesi{font-size:16px;flex:1;min-width:240px}
+ul.msg{margin:8px 0 0;padding-left:18px;font-size:13px;color:var(--muted)}
+ul.msg li.blocco{color:var(--bad)}
+label.sl{display:block;margin:10px 0 2px;font-size:13px}
+label.sl b{float:right;font-family:var(--mono);font-weight:500}
+input[type=range]{width:100%;accent-color:var(--accent)}
+select,button{font:inherit;font-size:13px;padding:6px 10px;border-radius:7px;border:1px solid var(--line);background:var(--panel);color:var(--ink)}
+button{cursor:pointer}button.pri{background:var(--accent);border-color:var(--accent);color:var(--panel)}
+button:disabled{opacity:.5;cursor:default}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.small{font-size:12px;color:var(--muted)}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:500;font-size:12px}
+td.n{font-family:var(--mono);text-align:right}th.n{text-align:right}
+.scroll{overflow-x:auto}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media (max-width:1100px){.grid2{grid-template-columns:1fr}}
+svg text{fill:var(--muted);font-size:11px}
+.legend{display:flex;gap:14px;font-size:12px;color:var(--muted);margin-top:6px;flex-wrap:wrap}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+.mono{font-family:var(--mono);font-size:12px}
+.busy{opacity:.55;transition:opacity .2s}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:13px}
+.kv div:nth-child(odd){color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <h1>CWM 1.2 <span>· Collective Wisdom Model</span></h1>
+  <div class="sub">Prototipo di ricerca: tutti i parametri tranne l'effetto medio del tutoraggio sono ipotesi illustrative.</div>
+</header>
+<main id="app">
+  <section class="panel banner" id="banner"><div class="sintesi">Caricamento…</div></section>
+
+  <aside>
+    <div class="panel">
+      <h2>Pesi e obiettivo</h2>
+      <div id="sliders"></div>
+      <div class="row">
+        <button id="reset">Pesi del gruppo</button>
+        <span class="small" id="fontepesi"></span>
+      </div>
+      <label class="sl" for="obiettivo">Obiettivo della decisione</label>
+      <select id="obiettivo" style="width:100%"></select>
+      <div class="small" id="obdescr" style="margin-top:4px"></div>
+      <label class="row small"><input type="checkbox" id="stab"> Calcola la stabilità rispetto ai pesi (più lento)</label>
+      <div class="row"><button class="pri" id="registra">Registra nell'audit</button></div>
+      <div class="small" id="elic" style="margin-top:12px"></div>
+    </div>
+  </aside>
+
+  <div class="col" id="contenuto">
+    <div class="panel">
+      <h2>Politiche ammesse</h2>
+      <div id="graficoPol"></div>
+      <div class="legend"><span><i style="background:var(--accent)"></i>rimpianto massimo</span><span><i style="background:var(--bar2)"></i>rimpianto medio</span></div>
+      <div class="scroll" style="margin-top:10px"><table id="tabPol"></table></div>
+      <div class="small" id="escluse" style="margin-top:8px"></div>
+    </div>
+    <div class="grid2">
+      <div class="panel"><h2>Validazione</h2><div class="scroll"><table id="tabVal"></table></div></div>
+      <div class="panel"><h2>Cancello sulle prove</h2><div id="gate"></div></div>
+    </div>
+    <div class="panel">
+      <h2>Valore dell'informazione</h2>
+      <div class="small" id="evpi"></div>
+      <div id="graficoVoi"></div>
+      <div class="legend"><span><i style="background:var(--bar2)"></i>EVPPI (decisore a utilità attesa)</span><span><i style="background:var(--accent)"></i>VOI-R (decisore robusto)</span></div>
+      <div class="small" id="priorita" style="margin-top:6px"></div>
+    </div>
+    <div class="panel" id="pStab"><h2>Stabilità rispetto ai pesi</h2><div id="stabilita" class="small">Attiva «Calcola la stabilità» per vederla.</div></div>
+    <div class="grid2">
+      <div class="panel"><h2>Audit</h2><div id="audit" class="small">…</div></div>
+      <div class="panel"><h2>Confronto con EMA Workbench</h2><div id="bench" class="small">Il benchmark riesegue l'analisi del lake problem sui risultati di EMA Workbench.</div><div class="row"><button id="btnBench">Esegui benchmark</button></div></div>
+    </div>
+  </div>
+</main>
+<script>
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const f=(x,n=4)=>x==null?"—":Number(x).toFixed(n);
+let BASE=null,pesi={},timer=null,richiesta=0,manuali=false;
+
+async function api(path,body){
+  const r=await fetch(path,body?{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)}:{});
+  const j=await r.json(); if(!r.ok||j.errore) throw new Error(j.errore||r.status); return j;
+}
+function badgeVerdetto(v){const m={PASS:"b-ok",PASS_CON_RISERVA:"b-warn",ABSTAIN:"b-bad",SUPERATO:"b-ok",NON_SUPERATO:"b-bad",sufficiente:"b-ok",con_riserva:"b-warn",insufficiente:"b-bad"};
+  return `<span class="badge ${m[v]||"b-info"}">${esc(v.replaceAll("_"," "))}</span>`;}
+
+function slider(){
+  $("#sliders").innerHTML=BASE.criteri.map(c=>`<label class="sl" for="w_${esc(c)}">${esc(c.replace("_"," "))} <b id="v_${esc(c)}"></b></label>
+    <input type="range" id="w_${esc(c)}" min="0" max="100" step="1">`).join("");
+  BASE.criteri.forEach(c=>{const el=$("#w_"+c);el.addEventListener("input",()=>{pesi[c]=+el.value;manuali=true;mostraPesi();$("#fontepesi").textContent="pesi modificati a mano";pianifica();});});
+}
+function impostaPesi(w){BASE.criteri.forEach(c=>{pesi[c]=Math.round(w[c]*100);$("#w_"+c).value=pesi[c];});mostraPesi();}
+function normalizzati(){const s=Object.values(pesi).reduce((a,b)=>a+b,0)||1;const o={};BASE.criteri.forEach(c=>o[c]=pesi[c]/s);return o;}
+function mostraPesi(){const n=normalizzati();BASE.criteri.forEach(c=>$("#v_"+c).textContent=(n[c]*100).toFixed(0)+"%");}
+function pianifica(){clearTimeout(timer);timer=setTimeout(()=>analizza(false),350);}
+
+function barre(righe,serie,colori,larghezza=640){
+  larghezza=Math.max(300,Math.min(900,larghezza));const h=26,top=6,etich=larghezza<480?96:110,w=larghezza-etich-60;const max=Math.max(1e-12,...righe.flatMap(r=>serie.map(s=>r[s]||0)));
+  const sh=(h-6)/serie.length;
+  let out=`<svg viewBox="0 0 ${larghezza} ${righe.length*h+top+4}" width="100%" role="img">`;
+  righe.forEach((r,i)=>{const y=top+i*h;out+=`<text x="0" y="${y+h/2+2}">${esc(r.etichetta)}</text>`;
+    serie.forEach((s,k)=>{const v=r[s]||0;const bw=Math.max(1,v/max*w);
+      out+=`<rect x="${etich}" y="${y+k*sh}" width="${bw}" height="${sh-2}" rx="2" fill="${colori[k]}"><title>${esc(s)}: ${f(v,5)}</title></rect>
+      <text x="${etich+bw+4}" y="${y+k*sh+sh-4}">${f(v,4)}</text>`;});});
+  return out+"</svg>";
+}
+
+function disegna(r){
+  const c=r.controlli_uso, g=r.cancello_prove;
+  $("#banner").innerHTML=`${badgeVerdetto(g.verdetto)}<div class="sintesi">${esc(r.sintesi)}
+    <ul class="msg">${c.blocchi.map(b=>`<li class="blocco">Blocco: ${esc(b)}</li>`).join("")}${c.avvisi.map(a=>`<li>${esc(a)}</li>`).join("")}</ul></div>`;
+  const pol=Object.entries(r.metriche_train);
+  $("#graficoPol").innerHTML=barre(pol.map(([p,m])=>({etichetta:p+(p===r.scelta_minimax?" ★":""),max:m.rimpianto_massimo,medio:m.rimpianto_medio})),["max","medio"],["var(--accent)","var(--bar2)"],$("#graficoPol").clientWidth);
+  $("#tabPol").innerHTML=`<tr><th>politica</th><th class="n">punteggio medio</th><th class="n">rimpianto medio</th><th class="n">rimpianto max</th><th class="n">vittorie</th><th>strategie</th></tr>`+
+    pol.map(([p,m])=>{const s=(r.confronto_strategie.find(x=>x.politica===p)||{}).strategie||[];
+      return `<tr><td><b>${esc(p)}</b></td><td class="n">${f(m.punteggio_medio)}</td><td class="n">${f(m.rimpianto_medio)}</td><td class="n">${f(m.rimpianto_massimo)}</td><td class="n">${m.vittorie_uniche}</td><td class="small">${esc(s.join(", "))}</td></tr>`}).join("");
+  const esc_=Object.entries(r.vincoli.escluse);
+  $("#escluse").innerHTML=`★ scelta minimax (${r.scenari_train} scenari). Escluse dai vincoli sui diritti: `+(esc_.length?esc_.map(([p,m])=>`<b>${esc(p)}</b> (${esc(m.map(x=>x.split(":")[0]).join(", "))})`).join(", "):"nessuna");
+  $("#tabVal").innerHTML=`<tr><th>holdout</th><th>ottimale</th><th class="n">scarto</th><th>esito</th></tr>`+r.validazione.map(v=>
+    `<tr><td>${esc(v.holdout)}<div class="small">${esc(v.descrizione)}</div></td><td>${esc(v.scelta_ottimale_holdout)}</td><td class="n">${f(v.scarto)}<div class="small">tol. ${v.tolleranza}</div></td><td>${badgeVerdetto(v.esito)}</td></tr>`).join("");
+  $("#gate").innerHTML=`<div class="scroll"><table><tr><th>parametro</th><th>prova</th><th>min</th><th>stato</th></tr>${g.dettagli.map(d=>
+    `<tr><td>${esc(d.parametro)}</td><td>${esc(d.nome_livello)}</td><td class="n">${d.minimo}</td><td>${badgeVerdetto(d.stato)}</td></tr>`).join("")}</table></div>
+    <div class="row">${Object.entries(r.verdetti_per_obiettivo).map(([o,v])=>`<span class="small">${esc(o.replaceAll("_"," "))}</span>${badgeVerdetto(v)}`).join(" ")}</div>`;
+  const voi=r.valore_informazione;
+  $("#evpi").textContent=`EVPI ${f(voi.evpi,5)} unità di utilità · ${voi.scenari} scenari. Le due misure usano scale diverse.`;
+  const pp=Object.entries(voi.per_parametro);const mE=Math.max(1e-12,...pp.map(x=>x[1].evppi)),mR=Math.max(1e-12,...pp.map(x=>x[1].voi_r));
+  $("#graficoVoi").innerHTML=barre(pp.map(([p,v])=>({etichetta:p,evppi_rel:v.evppi/mE,voir_rel:v.voi_r/mR,_e:v.evppi,_r:v.voi_r})),["evppi_rel","voir_rel"],["var(--bar2)","var(--accent)"],$("#graficoVoi").clientWidth).replace(/<text x="\d+(\.\d+)?" y="[\d.]+">[\d.]+<\/text>/g,"");
+  $("#priorita").innerHTML=`Priorità di ricerca — utilità attesa: <b>${esc(voi.priorita_ricerca_utilita_attesa.slice(0,3).join(", "))}</b>; robusta: <b>${esc(voi.priorita_ricerca_robusta.slice(0,3).join(", "))}</b>.`;
+  const st=r.stabilita_pesi;
+  if(st){const sm=Object.entries(st.smaa_attorno_ai_pesi);
+    $("#stabilita").innerHTML=`<div>${esc(st.raggio.interpretazione)}.</div><div style="margin-top:8px">Accettabilità SMAA attorno ai pesi del gruppo:</div>`+
+      barre(sm.map(([p,v])=>({etichetta:p,quota:v})),["quota"],["var(--accent)"],$("#stabilita").clientWidth)+
+      `<div>Con pesi del tutto ignoti: ${Object.entries(st.smaa_pesi_ignoti).map(([p,v])=>`${esc(p)} ${(v*100).toFixed(0)}%`).join(", ")}</div>`;}
+  else $("#stabilita").textContent="Attiva «Calcola la stabilità» per vederla.";
+  if(r.voce_audit) caricaAudit();
+}
+
+async function analizza(registra){
+  const id=++richiesta;$("#contenuto").classList.add("busy");
+  try{const r=await api("/api/analizza",{pesi:manuali?normalizzati():null,obiettivo:$("#obiettivo").value,stabilita:$("#stab").checked,registra});
+    if(id===richiesta) disegna(r);}
+  catch(e){$("#banner").innerHTML=`<span class="badge b-bad">ERRORE</span><div class="sintesi">${esc(e.message)}</div>`;}
+  finally{if(id===richiesta)$("#contenuto").classList.remove("busy");}
+}
+async function caricaAudit(){
+  const a=await api("/api/audit");const p=a.preregistrazione;
+  $("#audit").innerHTML=`<div class="kv"><div>catena</div><div>${a.catena.integro?'<span class="badge b-ok">INTEGRA</span>':'<span class="badge b-bad">COMPROMESSA</span>'} ${a.catena.voci} voci</div>
+    <div>preregistrazione</div><div>${p.preregistrato?`voce ${p.seq_preregistrazione}, ${esc(p.istante)}`:"assente"}</div>
+    <div>deviazioni</div><div>${p.deviazioni.length?esc(p.deviazioni.join("; ")):"nessuna"}</div>
+    <div>ultimo hash</div><div class="mono">${esc((a.catena.ultimo_hash||"").slice(0,24))}…</div></div>
+    <table style="margin-top:10px">${a.ultime.map(v=>`<tr><td class="n">${v.seq}</td><td>${esc(v.tipo)}</td><td class="mono">${esc(v.hash)}</td></tr>`).join("")}</table>`;
+}
+$("#btnBench").addEventListener("click",async()=>{
+  $("#btnBench").disabled=true;$("#bench").textContent="Calcolo in corso…";
+  try{const b=await api("/api/benchmark");const c=b.confronto_con_ema;const fn=b.fedelta_modello.numpy||{};
+    const top=Object.entries(b.aggiunte_cwm.valore_informazione.per_incertezza).sort((x,y)=>y[1].voi_r-x[1].voi_r).slice(0,3);
+    $("#bench").innerHTML=`<div class="kv"><div>esperimenti</div><div>${b.esperimenti} (EMA Workbench ${esc(b.ema_workbench_riferimento)})</div>
+      <div>metriche</div><div>${c.identico?'<span class="badge b-ok">IDENTICHE</span>':'<span class="badge b-bad">DIVERSE</span>'} scarto ${Math.max(c.per_esito,c.composita,c.quota_soddisfacente).toExponential(1)}</div>
+      <div>modello lake</div><div>${fn.differenza_massima_assoluta?"scarto "+Math.max(...Object.values(fn.differenza_massima_assoluta)).toExponential(1)+" (numpy)":"numpy assente"}</div>
+      <div>scelta minimax</div><div>${esc(b.robustezza.scelta_minimax)}</div>
+      <div>in più: VOI-R</div><div>${top.map(([k,v])=>`${esc(k)} ${f(v.voi_r,3)}`).join(", ")}</div>
+      <div>in più: stabilità</div><div>${esc(b.aggiunte_cwm.stabilita_pesi.raggio.interpretazione)}</div></div>`;}
+  catch(e){$("#bench").textContent="Errore: "+e.message;}
+  finally{$("#btnBench").disabled=false;}
+});
+(async()=>{
+  BASE=await api("/api/base");slider();impostaPesi(BASE.pesi_gruppo);$("#fontepesi").textContent="dall'elicitazione";
+  $("#obiettivo").innerHTML=Object.entries(BASE.obiettivi).map(([k,d])=>`<option value="${esc(k)}">${esc(k.replaceAll("_"," "))}</option>`).join("");
+  $("#obiettivo").value=BASE.obiettivo_predefinito;$("#obdescr").textContent=BASE.obiettivi[BASE.obiettivo_predefinito];
+  $("#obiettivo").addEventListener("change",()=>{$("#obdescr").textContent=BASE.obiettivi[$("#obiettivo").value];analizza(false);});
+  $("#stab").addEventListener("change",()=>analizza(false));
+  $("#reset").addEventListener("click",()=>{impostaPesi(BASE.pesi_gruppo);manuali=false;$("#fontepesi").textContent="dall'elicitazione";analizza(false);});
+  $("#registra").addEventListener("click",()=>analizza(true));
+  const e=BASE.elicitazione;
+  if(e)$("#elic").innerHTML=`Pesi del gruppo da ${e.accettati.length} partecipanti coerenti (CR ${f(e.cr_gruppo,3)}).`+(e.esclusi.length?` Esclusi: ${e.esclusi.map(x=>`${esc(x.id)} (CR ${f(x.cr,2)})`).join(", ")}.`:"")+` <i>Esempio sintetico.</i>`;
+  analizza(false);caricaAudit();
+})();
+</script>
+</body>
+</html>

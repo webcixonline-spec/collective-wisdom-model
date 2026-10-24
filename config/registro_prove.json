@@ -1,0 +1,113 @@
+{
+  "nota": "Registro delle prove. Livelli secondo logica GRADE: il disegno fissa il punto di partenza, i declassamenti lo riducono. Aggiornare questo file quando arrivano nuove prove: ogni modifica è tracciata nel registro di audit.",
+  "fonti": [
+    {
+      "id": "carlana_laferrara_2025",
+      "citazione": "Carlana M., La Ferrara E. (2025), Apart but Connected: Online Tutoring, Cognitive Outcomes, and Soft Skills, American Economic Review 115(10): 3487-3513 — esperimento randomizzato sul programma italiano di tutoraggio online TOP",
+      "doi": "10.1257/aer.20240401",
+      "url": "https://www.aeaweb.org/articles?id=10.1257/aer.20240401",
+      "disegno": "rct",
+      "contesto": "Italia, scuole medie (classi 6-8), 1.059 studenti di 76 scuole (530 trattati, 529 controlli); tutor volontari universitari online, 3 ore/settimana per 5 settimane (aprile-giugno 2020). Test standardizzato +0,26 DS (2020, J-PAL); matematica +0,23 DS (2020) e +0,20 DS (2022) con 3 ore individuali a settimana (Bocconi LEAP).",
+      "declassamenti": {"indirettezza": 1},
+      "motivo_declassamenti": "Tutoraggio online in periodo pandemico: trasferibilità parziale al tutoraggio dello scenario CWM.",
+      "sostiene_parametri": ["effetto"],
+      "stime": {
+        "effetto": {"intervallo": [0.20, 0.26], "unita": "DS per studente",
+                    "derivazione": "Intervallo delle stime puntuali pubblicate (0,20 matematica 2022; 0,23 matematica 2020; 0,26 test complessivo 2020). Errori standard non letti: l'intervallo NON è un intervallo di confidenza."}
+      },
+      "eterogeneita_riportata": "Effetti maggiori per figli di famiglie a basso status socioeconomico e di madri operaie; oltre +0,5 DS per studenti con disturbi dell'apprendimento (J-PAL). Tutto il campione era svantaggiato: non è un confronto tra svantaggiati e altri.",
+      "consultato_il": "2026-10-24",
+      "fonti_lette": ["https://www.povertyactionlab.org/print/pdf/node/7800730?lang=en", "https://leap.unibocconi.eu/projects/education/apart-connected-online-tutoring-cognitive-outcomes-and-soft-skills", "https://econpapers.repec.org/paper/cprceprdp/15761.htm"],
+      "da_verificare": "Pubblicazione e DOI confermati su Crossref il 2026-10-24 (versioni precedenti: NBER w32272, CEPR DP15761). Il valore 0,22 DS per il 2020 riportato in precedenza non coincide con lo 0,23 della pagina Bocconi: controllare sull'articolo, insieme a errori standard ed effetti per sottogruppo.",
+      "non_sostiene": "Riduzione causale dell'abbandono, costo completo per posto, differenze di efficacia tra gruppi nel nostro scenario."
+    },
+    {
+      "id": "nickow_oreopoulos_quan",
+      "citazione": "Nickow A., Oreopoulos P., Quan V. (2020), The Impressive Effects of Tutoring on PreK-12 Learning: A Systematic Review and Meta-Analysis of the Experimental Evidence, NBER Working Paper 27476; versione successiva indicizzata ERIC (2024)",
+      "url": "https://www.nber.org/papers/w27476",
+      "disegno": "meta_analisi_rct",
+      "contesto": "96 studi randomizzati, 732 stime, prevalentemente statunitensi. Effetto aggregato 0,37 DS (Tabella 3A: ES 0,032; la Tabella 2 riporta ES 0,088 per la stessa riga). L'aggregato è dominato da infanzia e primaria: classi 6-11 0,16 DS (8 studi; tutor non professionisti 0,12, 3 studi; paraprofessionisti 0,18, 3 studi; ES non calcolabili). Tutor non professionisti, tutte le classi: 0,21 [0,064]. Studi con più di 400 partecipanti: 0,25 [0,052] contro 0,45 sotto i 50 (effetto dei piccoli studi). Durante l'orario 0,40 [0,037], dopo la scuola 0,21 [0,049]. Rapporto tutor/studenti 1:1 0,38, 1:2 0,29, 1:3 e oltre 0,36: nessun calo netto con la dimensione del gruppo. 1-2 giorni a settimana 0,24, 3 giorni 0,34, 4-5 giorni 0,41. Nessuna analisi per status socioeconomico.",
+      "declassamenti": {"indirettezza": 1, "imprecisione": 1},
+      "motivo_declassamenti": "Indirettezza: studi soprattutto statunitensi e in presenza. Imprecisione: il sottoinsieme pertinente (classi 6-11) ha solo 8 studi ed errori standard non calcolabili.",
+      "sostiene_parametri": ["effetto"],
+      "stime": {
+        "effetto": {"intervallo": [0.12, 0.25], "unita": "DS per studente",
+                    "derivazione": "Stime per il contesto del CWM (scuola secondaria di primo grado, tutor non professionisti): classi 6-11 0,16 (non professionisti 0,12; paraprofessionisti 0,18) e studi con più di 400 partecipanti 0,25 (Tabelle 2, 3A, 3B, NBER WP 27476, luglio 2020). L'aggregato 0,37 non è usato perché dominato da infanzia e primaria."}
+      },
+      "consultato_il": "2026-10-24",
+      "fonti_lette": ["https://www.nber.org/papers/w27476.pdf", "https://edworkingpapers.com/ai20-267"],
+      "da_verificare": "Versione successiva (aggregato 0,288, ES 0,029) non letta: controllare se cambia le stime per le classi 6-11.",
+      "non_sostiene": "Effetti per gruppo svantaggiato rispetto agli altri (nessuna analisi per status socioeconomico); costi; saturazione per quota di posti assegnata a un gruppo (il rapporto tutor/studenti è un'altra cosa)."
+    },
+    {
+      "id": "pnrr_dm170_ucs",
+      "citazione": "Ministero dell'Istruzione e del Merito, DM 24 giugno 2022 n. 170 (PNRR, Investimento 1.4, riduzione dei divari e contrasto alla dispersione), Istruzioni operative prot. 109799 del 30 dicembre 2022 — unità di costo standard (UCS)",
+      "url": "https://www.tecnicadellascuola.it/pnrr-inviate-alle-scuole-le-istruzioni-operative-per-gestire-i-fondi-destinati-alla-lotta-alla-dispersione-scolastica",
+      "disegno": "dato_amministrativo_verificato",
+      "contesto": "Mentoring e orientamento individuali: 42 €/ora per destinatario, massimo 20 ore a percorso, nessun costo indiretto. Potenziamento in piccoli gruppi (minimo 3 destinatari): 79 €/ora UCS personale più 40% di costi indiretti, massimo 30 ore (non è indicato se l'ora è per gruppo o per persona).",
+      "declassamenti": {"indirettezza": 1, "rischio_bias": 1},
+      "motivo_declassamenti": "Indirettezza: costo standard nazionale di rimborso, non costo osservato in un istituto. Rischio di distorsione: letto in un articolo di stampa specializzata, non nel testo ufficiale delle istruzioni operative.",
+      "sostiene_parametri": ["costo_svantaggiati", "costo_altri"],
+      "stime": {
+        "costo_svantaggiati": {"intervallo": [630, 840], "unita": "EUR per posto",
+                               "derivazione": "Mentoring individuale 42 €/h × 15-20 ore per studente (15 ore = dosaggio del programma TOP; 20 ore = massimo PNRR)."},
+        "costo_altri": {"intervallo": [630, 840], "unita": "EUR per posto",
+                        "derivazione": "Stessa UCS: le istruzioni non distinguono il costo per tipo di studente."}
+      },
+      "consultato_il": "2026-10-24",
+      "da_verificare": "Confrontare con il testo ufficiale (nota prot. 109799 del 30/12/2022) e con eventuali aggiornamenti (es. DM 19/2024). Le UCS sono rimborsi standard, non preventivi: per 'programma_locale' servono preventivi degli istituti (vedi config/raccolta_costi_modello.csv).",
+      "non_sostiene": "Costo effettivo in un istituto specifico; differenze di costo tra gruppi."
+    },
+    {
+      "id": "ccnl_scuola_tabella5",
+      "citazione": "CCNL comparto scuola 2006-2009, Tabella 5 (compensi orari per attività aggiuntive), richiamata dal CCNL 2016-2018 art. 1 c. 10",
+      "url": "https://www.tecnicadellascuola.it/illegittimo-pagare-i-docenti-a-35-euro-lora-per-i-corsi-di-recupero-estivi",
+      "disegno": "dato_amministrativo_verificato",
+      "contesto": "Compenso orario lordo tabellare: 35 € per ore aggiuntive di insegnamento, 50 € per corsi di recupero, 17,50 € per ore non di insegnamento.",
+      "declassamenti": {"indirettezza": 1, "rischio_bias": 1},
+      "motivo_declassamenti": "Indirettezza: solo il compenso del docente, senza oneri a carico dell'amministrazione né costi organizzativi. Rischio di distorsione: letto in un articolo di stampa del 2018, CCNL successivi non controllati.",
+      "sostiene_parametri": ["costo_svantaggiati", "costo_altri"],
+      "stime": {
+        "costo_svantaggiati": {"intervallo": [525, 1000], "unita": "EUR per posto",
+                               "derivazione": "35-50 €/h × 15-20 ore individuali per studente; limite inferiore sottostimato perché esclude oneri riflessi e organizzazione."},
+        "costo_altri": {"intervallo": [525, 1000], "unita": "EUR per posto",
+                        "derivazione": "Stesso compenso orario per qualunque studente."}
+      },
+      "consultato_il": "2026-10-24",
+      "da_verificare": "Testo vigente del CCNL sul sito ARAN e aliquote degli oneri riflessi per passare dal lordo dipendente al lordo Stato.",
+      "non_sostiene": "Costo completo di un programma; differenze di costo tra gruppi."
+    },
+    {
+      "id": "cabezas_cuesta_gallego_2021",
+      "citazione": "Cabezas V., Cuesta J.I., Gallego F.A. (2021), Does Short-Term School Tutoring have Medium-Term Effects? Experimental Evidence from Chile, Documento de Trabajo IE-PUC n. 565 (settembre 2021); registro AEARCTR-0001480",
+      "url": "https://economia.uc.cl/wp-content/uploads/2022/08/dt-565.pdf",
+      "disegno": "rct",
+      "contesto": "Programma Servicio País en Educación, Cile 2010: 15 sessioni settimanali di 90 minuti di lettura condivisa in piccoli gruppi, quarta elementare, scuole pubbliche a basso rendimento e basso status socioeconomico, volontari universitari, costo 99 USD per studente. 85 scuole randomizzate (45 trattate, 40 controlli), 6.129 studenti; adesione 52,6%. Sottogruppi: rischio di abbandono previsto sopra/sotto la mediana. Effetti ITT (ES tra parentesi). Breve termine, test di lingua: tutti 0,0585 (0,0349), rischio alto 0,0856 (0,0533), rischio basso 0,0649 (0,0359); comprensione: 0,107 (0,046), 0,103 (0,070), 0,121 (0,052). Abbandono entro il 2017 (base 16% nel campione): tutti -1,76 p.p. (1,06), rischio alto -3,73 p.p. (1,96), rischio basso +0,48 p.p. (0,95). Regolarità 2017: +3,19 p.p. (1,58), rischio alto +5,44 (2,25), basso +0,87 (2,00). Voti primaria: 0,0875 (0,028), alto 0,133 (0,036), basso 0,050 (0,028). Matematica primaria: alto 0,170 (0,052), basso 0,017 (0,062).",
+      "declassamenti": {"indirettezza": 2, "imprecisione": 1},
+      "motivo_declassamenti": "Indirettezza: Cile, quarta elementare, lettura; i sottogruppi dividono per rischio di abbandono studenti già tutti a basso status, non svantaggiati contro altri. Imprecisione: stime per sottogruppo con errori standard ampi; effetti a breve termine non diversi tra gruppi.",
+      "sostiene_parametri": ["conversione_lp", "moltiplicatore"],
+      "stime": {
+        "moltiplicatore": {"intervallo": [0.85, 1.32], "unita": "rapporto tra effetti",
+                           "derivazione": "Rapporto tra effetto ITT a breve termine per rischio alto e rischio basso: comprensione 0,103/0,121 = 0,85; test di lingua 0,0856/0,0649 = 1,32 (Tabella 3). Sono rapporti tra stime imprecise; sugli esiti di medio periodo i rapporti sono maggiori (voti primaria 0,133/0,050 = 2,7), ma il modello usa il moltiplicatore sull'effetto immediato di apprendimento."}
+      },
+      "consultato_il": "2026-10-24",
+      "da_verificare": "Il modello CWM lega il beneficio di lungo periodo al guadagno di apprendimento (conversione_lp per DS). Questo studio mostra il contrario: effetto sull'abbandono di -3,73 p.p. per i più a rischio con effetti di apprendimento a breve termine piccoli e uguali tra gruppi; gli autori lo attribuiscono alla relazione con il tutor. Il rapporto 1,76 p.p. / 0,0585 DS = 0,30 per DS non è quindi una stima di conversione_lp. Valutare una struttura diversa: riduzione diretta dell'abbandono per studente a rischio trattato.",
+      "non_sostiene": "Un valore numerico di conversione_lp nella forma usata dal modello; trasferibilità a scuola media italiana."
+    },
+    {
+      "id": "ipotesi_cwm",
+      "citazione": "Parametri ipotetici del simulatore CWM",
+      "disegno": "assunzione",
+      "sostiene_parametri": ["moltiplicatore", "saturazione", "conversione_lp"],
+      "non_sostiene": "Effetti causali reali, prezzi reali o preferenze della popolazione."
+    },
+    {"id": "rothery_2020", "citazione": "Rothery C. et al. (2020), Value in Health — metodi EVPI/EVPPI/EVSI", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7373630/", "disegno": "metodologia"},
+    {"id": "strong_2014", "citazione": "Strong M., Oakley J.E., Brennan A. (2014), Medical Decision Making — EVPPI con regressione non parametrica", "disegno": "metodologia"},
+    {"id": "strong_2015", "citazione": "Strong M., Oakley J.E., Brennan A., Breeze P. (2015), Medical Decision Making — EVSI con metodo di regressione", "disegno": "metodologia"},
+    {"id": "guyatt_2008", "citazione": "Guyatt G.H. et al. (2008), BMJ — sistema GRADE", "disegno": "metodologia"},
+    {"id": "lempert_2006", "citazione": "Lempert R.J. et al. (2006), Management Science — Robust Decision Making", "disegno": "metodologia"},
+    {"id": "lahdelma_1998", "citazione": "Lahdelma R., Hokkanen J., Salminen P. (1998), European Journal of Operational Research — SMAA", "disegno": "metodologia"},
+    {"id": "forman_peniwati_1998", "citazione": "Forman E., Peniwati K. (1998), European Journal of Operational Research — aggregazione di giudizi AHP", "disegno": "metodologia"},
+    {"id": "kwakkel_2017", "citazione": "Kwakkel J.H. (2017), Environmental Modelling & Software — EMA Workbench", "disegno": "metodologia"}
+  ]
+}

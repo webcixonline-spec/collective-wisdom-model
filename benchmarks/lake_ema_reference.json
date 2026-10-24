@@ -1,0 +1,251 @@
+{
+  "ema_workbench": "3.0.0",
+  "numpy": "2.5.4",
+  "direzioni": {
+    "max_p": "min",
+    "utility": "max",
+    "inertia": "min",
+    "reliability": "max"
+  },
+  "pesi": {
+    "max_p": 0.3,
+    "utility": 0.3,
+    "inertia": 0.1,
+    "reliability": 0.3
+  },
+  "soglie": {
+    "reliability": [
+      ">=",
+      0.95
+    ],
+    "utility": [
+      ">=",
+      0.1
+    ]
+  },
+  "per_esito": {
+    "max_p": {
+      "prudente": {
+        "media": 1.9685741820732567,
+        "p10": 0.08377369367632097,
+        "p90": 7.3312742875542245,
+        "rimpianto_medio": 0.0,
+        "rimpianto_massimo": 0.0
+      },
+      "moderata": {
+        "media": 3.1024907101220096,
+        "p10": 0.13955977107242995,
+        "p90": 7.915162233109827,
+        "rimpianto_medio": 1.1339165280487526,
+        "rimpianto_massimo": 8.752425663697485
+      },
+      "intensiva": {
+        "media": 3.731120874077464,
+        "p10": 0.2097637619312029,
+        "p90": 8.063531955912563,
+        "rimpianto_medio": 1.762546692004207,
+        "rimpianto_massimo": 8.92550708391829
+      },
+      "molto_intensiva": {
+        "media": 4.289404502495603,
+        "p10": 0.30750405477901127,
+        "p90": 8.28621187077953,
+        "rimpianto_medio": 2.320830320422346,
+        "rimpianto_massimo": 9.18430219927479
+      },
+      "alternata_bassa": {
+        "media": 2.699609543386858,
+        "p10": 0.12146457376575863,
+        "p90": 7.848796385113734,
+        "rimpianto_medio": 0.7310353613136007,
+        "rimpianto_massimo": 8.669281135771168
+      },
+      "alternata_media": {
+        "media": 3.5072710099882913,
+        "p10": 0.18394797531054985,
+        "p90": 7.997391305289805,
+        "rimpianto_medio": 1.5386968279150346,
+        "rimpianto_massimo": 8.847087085033642
+      }
+    },
+    "utility": {
+      "prudente": {
+        "media": 0.11535801037995502,
+        "p10": 0.062393391575529464,
+        "p90": 0.19951099464765548,
+        "rimpianto_medio": 0.8075060726596852,
+        "rimpianto_massimo": 1.772038233330513
+      },
+      "moderata": {
+        "media": 0.34607403113986507,
+        "p10": 0.18718017472658843,
+        "p90": 0.5985329839429667,
+        "rimpianto_medio": 0.5767900518997752,
+        "rimpianto_massimo": 1.2657415952360807
+      },
+      "intensiva": {
+        "media": 0.5767900518997753,
+        "p10": 0.3119669578776474,
+        "p90": 0.9975549732382777,
+        "rimpianto_medio": 0.34607403113986507,
+        "rimpianto_massimo": 0.7594449571416484
+      },
+      "molto_intensiva": {
+        "media": 0.9228640830396402,
+        "p10": 0.4991471326042357,
+        "p90": 1.5960879571812439,
+        "rimpianto_medio": 0.0,
+        "rimpianto_massimo": 0.0
+      },
+      "alternata_bassa": {
+        "media": 0.2278354480967816,
+        "p10": 0.12169171889514335,
+        "p90": 0.39659497284534173,
+        "rimpianto_medio": 0.6950286349428586,
+        "rimpianto_massimo": 1.5208060381622375
+      },
+      "alternata_media": {
+        "media": 0.4585514688566918,
+        "p10": 0.24647850204620228,
+        "p90": 0.7956169621406528,
+        "rimpianto_medio": 0.4643126141829485,
+        "rimpianto_massimo": 1.0145094000678052
+      }
+    },
+    "inertia": {
+      "prudente": {
+        "media": 0.0,
+        "p10": 0.0,
+        "p90": 0.0,
+        "rimpianto_medio": 0.0,
+        "rimpianto_massimo": 0.0
+      },
+      "moderata": {
+        "media": 0.0,
+        "p10": 0.0,
+        "p90": 0.0,
+        "rimpianto_medio": 0.0,
+        "rimpianto_massimo": 0.0
+      },
+      "intensiva": {
+        "media": 0.0,
+        "p10": 0.0,
+        "p90": 0.0,
+        "rimpianto_medio": 0.0,
+        "rimpianto_massimo": 0.0
+      },
+      "molto_intensiva": {
+        "media": 0.0,
+        "p10": 0.0,
+        "p90": 0.0,
+        "rimpianto_medio": 0.0,
+        "rimpianto_massimo": 0.0
+      },
+      "alternata_bassa": {
+        "media": 1.0,
+        "p10": 1.0,
+        "p90": 1.0,
+        "rimpianto_medio": 1.0,
+        "rimpianto_massimo": 1.0
+      },
+      "alternata_media": {
+        "media": 1.0,
+        "p10": 1.0,
+        "p90": 1.0,
+        "rimpianto_medio": 1.0,
+        "rimpianto_massimo": 1.0
+      }
+    },
+    "reliability": {
+      "prudente": {
+        "media": 0.7815565,
+        "p10": 0.14320000000000002,
+        "p90": 1.0,
+        "rimpianto_medio": 0.0,
+        "rimpianto_massimo": 0.0
+      },
+      "moderata": {
+        "media": 0.564503,
+        "p10": 0.08298000000000001,
+        "p90": 1.0,
+        "rimpianto_medio": 0.21705349999999998,
+        "rimpianto_massimo": 0.8657
+      },
+      "intensiva": {
+        "media": 0.4067315,
+        "p10": 0.05979,
+        "p90": 1.0,
+        "rimpianto_medio": 0.374825,
+        "rimpianto_massimo": 0.9213
+      },
+      "molto_intensiva": {
+        "media": 0.252272,
+        "p10": 0.04,
+        "p90": 1.0,
+        "rimpianto_medio": 0.5292844999999999,
+        "rimpianto_massimo": 0.9501
+      },
+      "alternata_bassa": {
+        "media": 0.6563940000000001,
+        "p10": 0.10636000000000001,
+        "p90": 1.0,
+        "rimpianto_medio": 0.12516249999999998,
+        "rimpianto_massimo": 0.775
+      },
+      "alternata_media": {
+        "media": 0.4722065,
+        "p10": 0.06982000000000001,
+        "p90": 1.0,
+        "rimpianto_medio": 0.30935,
+        "rimpianto_massimo": 0.9004
+      }
+    }
+  },
+  "quota_soddisfacente": {
+    "prudente": 0.36,
+    "moderata": 0.46,
+    "intensiva": 0.31,
+    "molto_intensiva": 0.165,
+    "alternata_bassa": 0.565,
+    "alternata_media": 0.37
+  },
+  "composita": {
+    "prudente": {
+      "punteggio_medio": 0.58997593472245,
+      "rimpianto_medio": 0.050971004944524126,
+      "rimpianto_p90": 0.13805264883846818,
+      "rimpianto_massimo": 0.2583019551611019
+    },
+    "moderata": {
+      "punteggio_medio": 0.5278997433642101,
+      "rimpianto_medio": 0.11304719630276391,
+      "rimpianto_p90": 0.31252259629258466,
+      "rimpianto_massimo": 0.44613305703171413
+    },
+    "intensiva": {
+      "punteggio_medio": 0.497696072271004,
+      "rimpianto_medio": 0.1432508673959701,
+      "rimpianto_p90": 0.34329408418190727,
+      "rimpianto_massimo": 0.4397989248362774
+    },
+    "molto_intensiva": {
+      "punteggio_medio": 0.4880016110799332,
+      "rimpianto_medio": 0.1529453285870409,
+      "rimpianto_p90": 0.3240989793405477,
+      "rimpianto_massimo": 0.4149381731096055
+    },
+    "alternata_bassa": {
+      "punteggio_medio": 0.44894937836408194,
+      "rimpianto_medio": 0.19199756130289214,
+      "rimpianto_p90": 0.387358252849473,
+      "rimpianto_massimo": 0.5192861613865509
+    },
+    "alternata_media": {
+      "punteggio_medio": 0.4057961934133763,
+      "rimpianto_medio": 0.23515074625359772,
+      "rimpianto_p90": 0.43281283910899804,
+      "rimpianto_massimo": 0.5475497481666889
+    }
+  },
+  "scelta_minimax": "prudente"
+}

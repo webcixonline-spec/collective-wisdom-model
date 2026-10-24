@@ -1,0 +1,32 @@
+{
+  "nota": "Livelli: 4 alta, 3 moderata, 2 bassa, 1 molto bassa, 0 assente. Sotto il minimo -> ABSTAIN; tra minimo e desiderato -> PASS_CON_RISERVA. Le soglie sono scelte normative degli autori, da sottoporre a revisione.",
+  "obiettivi": {
+    "raccomandazione_nazionale": {
+      "descrizione": "Indicazione di allocazione valida su scala nazionale",
+      "parametri": {
+        "effetto": {"minimo": 3, "desiderato": 4, "motivo": "serve un effetto causale trasferibile"},
+        "moltiplicatore": {"minimo": 3, "motivo": "la priorità dipende dall'efficacia relativa tra gruppi"},
+        "costo_svantaggiati": {"minimo": 4, "motivo": "costo italiano completo e verificato"},
+        "costo_altri": {"minimo": 4, "motivo": "costo italiano completo e verificato"},
+        "conversione_lp": {"minimo": 2, "desiderato": 3, "motivo": "benefici di lungo periodo"},
+        "saturazione": {"minimo": 2, "motivo": "rendimenti decrescenti per dimensione del gruppo"}
+      }
+    },
+    "programma_locale": {
+      "descrizione": "Adozione stabile in un singolo istituto o comune",
+      "parametri": {
+        "effetto": {"minimo": 2, "desiderato": 3},
+        "moltiplicatore": {"minimo": 2, "motivo": "almeno indizi sull'efficacia per gruppo"},
+        "costo_svantaggiati": {"minimo": 3, "motivo": "preventivo locale verificato"},
+        "costo_altri": {"minimo": 3, "motivo": "preventivo locale verificato"}
+      }
+    },
+    "pilota_valutato": {
+      "descrizione": "Sperimentazione limitata con valutazione randomizzata, per produrre le prove mancanti",
+      "parametri": {
+        "effetto": {"minimo": 2, "desiderato": 3, "motivo": "l'intervento deve essere plausibilmente efficace"},
+        "costo_svantaggiati": {"minimo": 0, "desiderato": 2, "motivo": "il pilota stesso misurerà il costo"}
+      }
+    }
+  }
+}
