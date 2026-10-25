@@ -9,10 +9,41 @@ CWM non è un altro motore di esplorazione degli scenari: è il **livello decisi
 
 Requisiti: Python ≥ 3.10, **nessuna libreria esterna**. Se numpy è installato, il lake problem riproduce EMA bit per bit.
 
+## When should a decision model refuse to recommend?
+
+**CWM is a Python research prototype for public decisions under uncertainty: evidence checks, value of information, stakeholder weights, explicit abstention, and a verifiable audit trail.**
+
+It connects model parameters to their evidence sources, explores which missing information is worth collecting, and checks whether a recommendation is permitted for its intended use. It can read EMA Workbench results and provides a local web interface.
+
+**Research status:** not validated for allocating public resources. The included example combines sourced estimates with illustrative assumptions and synthetic stakeholder preferences. It withholds recommendations while those preferences remain synthetic. See the detailed limitations below.
+
+### Try the local interface
+
+Requires Git and Python 3.10 or newer. Run these commands in your terminal:
+
+```bash
+git clone https://github.com/webcixonline-spec/collective-wisdom-model.git
+cd collective-wisdom-model
+python3 -m cwm interfaccia
+```
+
+Open <http://127.0.0.1:8765> in your browser. The core uses the Python standard library; no package installation is needed for this quick start.
+
+### Help test the idea
+
+Can you find a case where CWM should abstain but does not? Or evidence that would change a decision? [Open an issue](https://github.com/webcixonline-spec/collective-wisdom-model/issues) with the command, configuration, expected result, and actual result. Remove private data and audit keys before sharing.
+
+Contributions are welcome on evidence quality, reproducibility, stakeholder elicitation, and English documentation. Read [CONTRIBUTING.md](CONTRIBUTING.md) to get started. If this research is useful, star the repository to find it again or share it with someone working on decision analysis.
+
+---
+
+## Documentazione italiana
+
 ## Installazione
 
 ```bash
-git clone <indirizzo del repository> cwm && cd cwm
+git clone https://github.com/webcixonline-spec/collective-wisdom-model.git cwm
+cd cwm
 python3 -m unittest discover -s tests       # 80 test, circa 15 secondi
 python3 -m pip install -e .                 # facoltativo: aggiunge il comando `cwm`
 ```
