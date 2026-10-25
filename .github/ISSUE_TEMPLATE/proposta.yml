@@ -1,0 +1,28 @@
+name: Proposta
+description: Una nuova funzione, un cambiamento di metodo o di documentazione
+title: "[Proposta] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problema
+    attributes:
+      label: Problema
+      description: Quale bisogno di chi decide, analizza o partecipa resta oggi senza risposta.
+    validations:
+      required: true
+  - type: textarea
+    id: soluzione
+    attributes:
+      label: Soluzione proposta
+    validations:
+      required: true
+  - type: checkboxes
+    id: garanzie
+    attributes:
+      label: Effetto sulle garanzie del modello
+      description: Indica cosa tocca la proposta, così se ne discute prima di scrivere codice.
+      options:
+        - label: Cancello sulle prove o astensione
+        - label: Preregistrazione o registro di audit
+        - label: Riproducibilità delle analisi già registrate
+        - label: Pesi, partecipanti o dati personali

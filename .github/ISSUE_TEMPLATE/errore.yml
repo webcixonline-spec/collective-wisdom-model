@@ -1,0 +1,41 @@
+name: Segnalazione di errore
+description: Un comando, un calcolo o l'interfaccia non si comporta come dovrebbe
+title: "[Errore] "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: cosa
+    attributes:
+      label: Cosa succede
+      description: Cosa ti aspettavi e cosa è successo invece.
+    validations:
+      required: true
+  - type: textarea
+    id: comando
+    attributes:
+      label: Comando e uscita
+      description: Il comando esatto e l'uscita completa (anche gli errori).
+      render: text
+    validations:
+      required: true
+  - type: input
+    id: versione
+    attributes:
+      label: Versione
+      description: Uscita di `git rev-parse --short HEAD` oppure la versione installata.
+    validations:
+      required: true
+  - type: input
+    id: ambiente
+    attributes:
+      label: Sistema e Python
+      description: Per esempio macOS 15, Python 3.12, con o senza numpy.
+    validations:
+      required: true
+  - type: checkboxes
+    id: dati
+    attributes:
+      label: Dati personali
+      options:
+        - label: Ho tolto dalla segnalazione dati personali, chiavi e contenuti di registro_audit/
+          required: true

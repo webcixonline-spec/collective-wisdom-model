@@ -1,0 +1,58 @@
+name: Nuova fonte o correzione al registro delle prove
+description: Proponi una prova per un parametro del modello o correggi una fonte esistente
+title: "[Fonte] "
+labels: ["prove"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Il registro delle prove (`config/registro_prove.json`) decide quando il modello può raccomandare e quando deve astenersi. Ogni numero deve poter essere ritrovato nella fonte.
+  - type: dropdown
+    id: parametro
+    attributes:
+      label: Parametro
+      multiple: true
+      options:
+        - effetto
+        - moltiplicatore
+        - saturazione
+        - conversione_lp
+        - costo_svantaggiati
+        - costo_altri
+        - altro (spiegare sotto)
+    validations:
+      required: true
+  - type: textarea
+    id: citazione
+    attributes:
+      label: Citazione completa e link
+      description: Autori, anno, titolo, rivista o documento, DOI o URL stabile.
+    validations:
+      required: true
+  - type: dropdown
+    id: disegno
+    attributes:
+      label: Disegno dello studio
+      options:
+        - meta-analisi di RCT
+        - RCT
+        - dato amministrativo verificato
+        - quasi sperimentale
+        - osservazionale
+        - parere di esperti
+    validations:
+      required: true
+  - type: textarea
+    id: valori
+    attributes:
+      label: Valori e dove si trovano
+      description: Stime con errori standard o intervalli, indicando pagina o tabella. Spiega come ricavi l'intervallo per il modello.
+    validations:
+      required: true
+  - type: textarea
+    id: trasferibilita
+    attributes:
+      label: Trasferibilità al contesto
+      description: Paese, età degli studenti, tipo di tutor, dosaggio. Serve per i declassamenti (indirettezza, imprecisione, rischio di distorsione).
+    validations:
+      required: true
