@@ -1,3 +1,8 @@
+# Unreleased
+
+- Added an isolated abstention demonstration, English onboarding and a reproducible challenge form.
+- Added a launch playbook and opt-in local GitHub measurement tool.
+
 # Modifiche
 
 ## 1.2.1 — 24 ottobre 2026
