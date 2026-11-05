@@ -1,0 +1,31 @@
+name: Abstention challenge
+description: Report a reproducible mismatch between expected and actual recommendation permission.
+title: "[Abstention] "
+body:
+  - type: markdown
+    attributes:
+      value: "Research feedback only. For vulnerabilities use SECURITY.md. Do not upload audit keys or personal data."
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Commit, Python version, command and minimal configuration
+      description: Include enough public information to reproduce the result.
+    validations:
+      required: true
+  - type: textarea
+    id: expectation
+    attributes:
+      label: Expected outcome and reason
+      description: Which evidence or governance rule should allow or block the recommendation?
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Actual output and exit code
+    validations:
+      required: true
+  - type: input
+    id: discovery
+    attributes:
+      label: Where did you find CWM? (optional)
