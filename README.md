@@ -1,5 +1,9 @@
 # Collective Wisdom Model 1.2
 
+**When should a decision model refuse to recommend?**
+
+[Start here (English)](docs/START_HERE_EN.md) · [Run the abstention challenge](docs/START_HERE_EN.md#run-an-actual-refusal)
+
 [![test](../../actions/workflows/test.yml/badge.svg)](../../actions/workflows/test.yml)
 Licenza: [EUPL-1.2](LICENSE) · Versione 1.2.1 · [Modifiche](CHANGELOG.md)
 
